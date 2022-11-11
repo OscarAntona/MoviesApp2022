@@ -1,4 +1,4 @@
-package com.antgut.app.data.local.db.commons
+package com.antgut.app.data.local.commons
 
 interface KSerializer {
     fun <T> toJson(src: T, classObject: Class<T>): String
