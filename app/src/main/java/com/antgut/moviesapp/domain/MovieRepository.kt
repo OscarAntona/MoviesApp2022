@@ -1,6 +1,6 @@
 package com.antgut.moviesapp.domain
 
 interface MoviesRepository {
-    fun getAllMovies(): List<Movie>
-    fun getMovieById(id: String): Movie?
+    suspend fun getAllMovies(): List<Movie>
+    suspend fun getMovieById(id: String): Movie?
 }
