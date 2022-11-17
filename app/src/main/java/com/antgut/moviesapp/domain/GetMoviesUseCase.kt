@@ -1,20 +1,18 @@
 package com.antgut.moviesapp.domain
 
 class GetMoviesUseCase(val repository: MoviesRepository) {
-    fun execute(): List<AllMovies> {
-        val movies = repository.getAllMovies()
-        val moviesList = movies.map {
-            AllMovies(
+    fun execute(): List<MoviesFeed> {
+        return repository.getAllMovies().map {
+            MoviesFeed(
                 it.poster,
                 it.title,
                 it.year,
                 it.rating
             )
         }
-        return moviesList
     }
 
-    data class AllMovies(
+    data class MoviesFeed(
         val poster: String,
         val title: String,
         val year: String,
