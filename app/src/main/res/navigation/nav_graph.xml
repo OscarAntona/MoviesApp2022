@@ -2,12 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/movies_feed">
+    app:startDestination="@id/moviesFeed">
 
     <fragment
-        android:id="@+id/movies_feed"
-        android:name="com.antgut.moviesapp.presentation.Fragment"
-        android:label="@string/app_title"/>
+        android:id="@+id/moviesFeed"
+        android:name="com.antgut.moviesapp.presentation.FragmentMovie"
+        android:label="@string/app_title">
+        <action
+            android:id="@+id/action_moviesfeed_to_moviedetail"
+            app:destination="@id/movieDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetail"
+        android:name="com.antgut.moviesapp.presentation.DetailFragment"
+        android:label="@string/detail_title">
+
+        <argument
+            android:name="key_movie"
+            app:argType="string" />
+
+    </fragment>
 
 
 </navigation>
