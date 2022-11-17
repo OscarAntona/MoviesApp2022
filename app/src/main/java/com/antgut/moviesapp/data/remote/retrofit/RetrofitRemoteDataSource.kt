@@ -5,13 +5,13 @@ import com.antgut.moviesapp.domain.Movie
 
 class RetrofitRemoteDataSource (val client: ApiClient) : RemoteDataRepository{
 
-    override fun getMovies(): List<Movie> {
+    override suspend fun getMovies(): List<Movie> {
         return client.getMovies().map {
             it.toDomain()
         }
     }
 
-    override fun getMovie(id: String): Movie? {
+    override suspend fun getMovie(id: String): Movie? {
         return client.getMovie(id)?.toDomain()
     }
 
