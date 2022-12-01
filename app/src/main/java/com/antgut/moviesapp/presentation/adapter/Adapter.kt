@@ -12,6 +12,11 @@ class Adapter: RecyclerView.Adapter<ViewHolder>(){
     private var item: ((String) -> Unit)? = null
 
 
+    fun setOnClickItem(item: (String) -> Unit) {
+        this.item = item
+    }
+
+
     fun setDataItems(movies: List<GetMoviesUseCase.AllMovies>){
         dataSet.clear()
         dataSet.addAll(movies)

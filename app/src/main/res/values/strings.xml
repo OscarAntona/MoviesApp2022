@@ -3,6 +3,7 @@
     <string name="app_title">Movies</string>
     <string name="year">Year</string>
     <string name="rating">Rating</string>
+    <string name="detail_title">Movie</string>
 
 
 </resources>

@@ -6,16 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.antgut.moviesapp.databinding.FragmentListBinding
 import com.antgut.moviesapp.presentation.adapter.Adapter
 
-class Fragment : Fragment() {
+class FragmentMovie : Fragment() {
 
     private var binding: FragmentListBinding? = null
     private val moviesAdapter = Adapter()
     val viewModel by lazy {
-        Factory().getViewModel(requireContext())
+        FactoryMovies().getViewModel(requireContext())
     }
 
     override fun onCreateView(
@@ -37,6 +38,9 @@ class Fragment : Fragment() {
                         LinearLayoutManager.VERTICAL,
                         false
                     )
+                moviesAdapter.setOnClickItem {
+                    navigateToMovieDetail(it)
+                }
             }
 
         }
@@ -50,9 +54,14 @@ class Fragment : Fragment() {
 
     private fun setupObservers() {
         val moviesFeedSuscriber =
-            Observer<ViewModel.UiState> { uiState ->
+            Observer<FeedViewModel.UiState> { uiState ->
                 moviesAdapter.setDataItems(uiState.moviesFeed)
             }
         viewModel.publisher.observe(viewLifecycleOwner, moviesFeedSuscriber)
+    }
+    private fun navigateToMovieDetail(movieId:String){
+        findNavController().navigate(
+           FragmentMovieDirections.actionMoviesfeedToMoviedetail(movieId)
+        )
     }
 }
