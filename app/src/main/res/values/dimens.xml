@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_body">10dp</dimen>
+    <dimen name="recycler_padding">16dp</dimen>
+    <dimen name="padding_item">16dp</dimen>
+    <dimen name="image_width_item">90dp</dimen>
+    <dimen name="image_height_item">120dp</dimen>
+    <dimen name="title_size">20dp</dimen>
+    <dimen name="year_size">15dp</dimen>
+    <dimen name="rating_size">15dp</dimen>
+    <dimen name="year_margin_top">15dp</dimen>
+    <dimen name="item_margin_start">12dp</dimen>
+    <dimen name="star_size">15dp</dimen>
+    <dimen name="star_margin_start">6dp</dimen>
+</resources>

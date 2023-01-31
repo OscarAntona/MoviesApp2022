@@ -2,7 +2,7 @@ package com.antgut.moviesapp.domain
 
 class GetMovieUseCase(val repository: MoviesRepository) {
 
-    fun execute(id: String): DetailMovie {
+    suspend fun execute(id: String): DetailMovie {
         val movie = repository.getMovieById(id)!!
         return DetailMovie(
             movie.poster, movie.title, movie.plot, movie.genre, movie.rating, movie.year

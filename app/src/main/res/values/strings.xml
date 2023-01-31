@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MoviesApp</string>
+    <string name="app_title">Movies</string>
+    <string name="year">Year</string>
+    <string name="rating">Rating</string>
+
+
 </resources>
