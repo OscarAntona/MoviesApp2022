@@ -8,7 +8,8 @@ class GetMoviesUseCase(val repository: MoviesRepository) {
                 it.poster,
                 it.title,
                 it.year,
-                it.rating
+                it.rating,
+                it.id
             )
         }
         return moviesList
@@ -18,6 +19,7 @@ class GetMoviesUseCase(val repository: MoviesRepository) {
         val poster: String,
         val title: String,
         val year: String,
-        val rating: String
+        val rating: String,
+        val id:String
     )
 }

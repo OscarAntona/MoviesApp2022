@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import androidx.lifecycle.ViewModel
 
-class ViewModel (val getMoviesUseCase: GetMoviesUseCase) : ViewModel(){
+class FeedViewModel (val getMoviesUseCase: GetMoviesUseCase) : ViewModel(){
 
     val publisher: MutableLiveData<UiState> by lazy{
         MutableLiveData<UiState>()
